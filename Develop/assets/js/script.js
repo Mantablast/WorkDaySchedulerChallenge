@@ -16,8 +16,10 @@ if (!scheduleItems) {
       scheduleContent: [],
     };
   }
-  // loop over object properties to insert
-  
+  // loop over object properties to insert to correct places
+
+
+
 };
 
 
@@ -27,7 +29,7 @@ if (!scheduleItems) {
 
 
 
-//created a time interval setinterval() that will update content with current hour and trigger an hour tracking function
+//create a time interval setinterval() that will update content with current hour and trigger an hour tracking function
 
 
 
