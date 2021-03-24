@@ -5,8 +5,27 @@ var formEl = document.querySelector("#task-form");
 var todaysDate = moment().format('dddd, MMMM Do YYYY');
 $("#currentDay").html(todaysDate);
 // document.todaysDate.setAttribute("class", "blue-text");
-console.log(moment().format('kk'));
 
+function colorCoding() {
+var currentHour = parseInt((moment().format('kk')));
+console.log(currentHour);
+$(".time-block").each(function () {
+  var blocksTimeStamp = parseInt($(this).attr("id"));
+  console.log(blocksTimeStamp);
+  //color code add class
+  if(blocksTimeStamp === currentHour) {
+    $(this).addClass(".orange-present");
+  }
+  else if(blocksTimeStamp < currentHour) {
+    $(this).addClass(".grey-past");
+  }
+  else if(blocksTimeStamp > currentHour) {
+    $(this).addClass(".green-future");
+  }
+
+})
+
+};
 
 var loadTasks = function() {
     getSchedItems = JSON.parse(localStorage.getItem("scheduleItems"));
@@ -38,6 +57,11 @@ if (!scheduleItems) {
 
 
 //hour tracking function to turn blocks different colors depending on if it is past, present or future
+setInterval(function() {
+  colorCoding();
+}, 1800000);
+
+colorCoding();
 
 
 
@@ -48,10 +72,12 @@ if (!scheduleItems) {
 
 
 
+$( ".save-icon" ).click(function() {
+    console.log("Save button clicked!");
+    var scheduleContent = $(this).siblings("text-box-insert").val();
+});
 
-
-
-
+  
 
 
 
@@ -64,9 +90,9 @@ if (!scheduleItems) {
 
 //ignore everything below***********
 
-// 1. Add a class to each of your text areas (same one)
-// 2. add a UNIQUE id to each timebloack for the hour it is
-// 3. Add a class (or use one that you already have for the bootstrap stuff) to the button
+// 1. Add a class to each of your text areas (same one) done
+// 2. add a UNIQUE id to each timebloack for the hour it is done
+// 3. Add a class (or use one that you already have for the bootstrap stuff) to the button done!
 // 4. use a onclick (or click in jquery) on the button class you are using.
 // 5. in the function that starts on the click use the JQUERY 'this' to grab the specific timeblock div
 // 6. Jquery has ways to grab siblings, parents, children etc and you can get that text area and the unique ID.
