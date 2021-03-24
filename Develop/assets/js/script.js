@@ -1,30 +1,35 @@
 
-var formEl = document.querySelector("#task-form");
+// var formEl = document.querySelector("#task-form");
 // var scheduleItems = document.querySelector("#task-form");
 //Retreiving the current day of week and month 
 var todaysDate = moment().format('dddd, MMMM Do YYYY');
 $("#currentDay").html(todaysDate);
 // document.todaysDate.setAttribute("class", "blue-text");
 
+
+//hour tracking function to turn blocks different colors depending on if it is past, present or future
 function colorCoding() {
 var currentHour = parseInt((moment().format('kk')));
 console.log(currentHour);
 $(".time-block").each(function () {
-  var blocksTimeStamp = parseInt($(this).attr("id"));
-  console.log(blocksTimeStamp);
-  //color code add class
-  if(blocksTimeStamp === currentHour) {
-    $(this).addClass(".orange-present");
-  }
-  else if(blocksTimeStamp < currentHour) {
-    $(this).addClass(".grey-past");
-  }
-  else if(blocksTimeStamp > currentHour) {
-    $(this).addClass(".green-future");
-  }
-
-})
-
+    var blocksTimeStamp = parseInt($(this).attr("id"));
+    console.log(blocksTimeStamp);
+    //remove all three classes in this section at once if they are there
+    $(this).removeClass("orange-present");
+    $(this).removeClass("grey-past");
+    $(this).removeClass("green-future");
+    //color code add class
+    if(blocksTimeStamp === currentHour) {
+      $(this).addClass("orange-present");
+    }
+    else if(blocksTimeStamp < currentHour) {
+      $(this).addClass("grey-past");
+    }
+    else if(blocksTimeStamp > currentHour) {
+      $(this).addClass("green-future");
+    }
+  })
+  // loadTasks();
 };
 
 var loadTasks = function() {
@@ -43,6 +48,7 @@ if (!scheduleItems) {
 
 
 //a function to create tasks completely new or when loaded from the object arrays, also needs to set item to local storage
+// var userText = $(this).val();
 
 // function saveTask {
 
@@ -50,13 +56,13 @@ if (!scheduleItems) {
 
 
 
+
+
+
+
+
+
 //create a time interval setinterval() that will update content with current hour and trigger an hour tracking function
-
-
-
-
-
-//hour tracking function to turn blocks different colors depending on if it is past, present or future
 setInterval(function() {
   colorCoding();
 }, 1800000);
