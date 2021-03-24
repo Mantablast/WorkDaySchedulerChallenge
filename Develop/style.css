@@ -87,3 +87,15 @@ textarea{
   color: #06AED5;
   font-weight: bold;
 }
+
+.grey-past {
+  background-color: rgb(189, 184, 184);
+}
+
+.orange-present {
+  background-color: rgb(247, 146, 110);
+}
+
+.green-future {
+  background-color: rgb(197, 240, 197);
+}
