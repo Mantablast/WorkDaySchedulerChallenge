@@ -69,3 +69,21 @@ textarea{
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
+
+.save-icon {
+  height:50px;
+  width:auto;
+}
+.time-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px dotted black;
+  padding: 10px;
+}
+
+.blue-text {
+  font-size: 25px;
+  color: #06AED5;
+  font-weight: bold;
+}
