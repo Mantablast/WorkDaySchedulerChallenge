@@ -30,20 +30,24 @@ $(".time-block").each(function () {
 };
 
 var loadTasks = function() {
-    getSchedItems = JSON.parse(localStorage.getItem("scheduleContent"));
+    var getSchedItems = JSON.parse(localStorage.getItem("scheduleContent"));
     // if nothing in localStorage, create a new object to track all task status arrays
-    if (!scheduleItems) {
-    scheduleItems = {
+    if (!getSchedItems) {
+
+      scheduleItems = [{
       hourId: [],
       scheduleItems: []
-      }
-      }
-      else {  $(".time-block").each(function() {
+      }];
+    }
+      else {
       $("#09 .text-box-insert").val(localStorage.getItem("09"));
       console.log("09:00 content retrieved");
+      $("#10 .text-box-insert").val(localStorage.getItem("10"));
+      console.log("09:00 content retrieved");
+      $("#11 .text-box-insert").val(localStorage.getItem("11"));
+      console.log("09:00 content retrieved");
    }
-)};
-
+  };
 
 //create a time interval setinterval() that will update content with current hour and trigger an hour tracking function
 setInterval(function() {
