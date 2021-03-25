@@ -11,6 +11,7 @@ A website that operates as a simple daily organization tool for a user.
 
 ## Website
 https://missaimeejay.github.io/WorkDaySchedulerChallenge/
+
 Repository: https://github.com/MissAimeeJay/WorkDaySchedulerChallenge
 
 ## Contribution
