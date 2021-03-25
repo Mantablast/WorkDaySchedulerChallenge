@@ -32,32 +32,36 @@ $(".time-block").each(function () {
   // loadTasks();
 };
 
-var loadTasks = function() {
-    getSchedItems = JSON.parse(localStorage.getItem("scheduleItems"));
-// if nothing in localStorage, create a new object to track all task status arrays
-if (!scheduleItems) {
-    scheduleItems = {
-      scheduleContent: [],
-    };
-  }
-  // loop over object properties to insert to correct places
-
-
-
-};
+// var loadTasks = function() {
+//     getSchedItems = JSON.parse(localStorage.getItem("scheduleItems"));
+// // if nothing in localStorage, create a new object to track all task status arrays
+// if (!scheduleItems) {
+//     scheduleItems = {
+//       scheduleContent: [],
+//     };
+//   }
+// else ()
+//   // loop over object properties to insert to correct places
+// };
 
 
 //a function to create tasks completely new or when loaded from the object arrays, also needs to set item to local storage
-// var userText = $(this).val();
+$("#task-form").on("click", "p", function() {
+  var text = $(this)
+    .text()
+    .trim();
+    $(this).replaceWith(textInput);
+    textInput.trigger("focus");
+    // recreate p element
+var taskP = $("<p>")
+.addClass("m-1")
+.text(text);
 
-// function saveTask {
+// replace textarea with p element
+$(this).replaceWith(taskP);
+});
 
 // }
-
-
-
-
-
 
 
 
@@ -73,22 +77,26 @@ colorCoding();
 
 
 
-
-
-
-
-
 $( ".save-icon" ).click(function() {
     console.log("Save button clicked!");
     var scheduleContent = $(this).siblings("text-box-insert").val();
+    scheduleContent = window.localStorage.setItem('user', JSON.stringify(scheduleContent));
 });
 
-  
 
 
+//not yet working
+// function clearAll() {
+//   var clearAsk = prompt("Are you sure?  The tasks can no longer be retrieved after clearing.")
+//   if(!clearAsk) {
+//     console.log("cancel clear");
+//   }
+//   else {
+//     console.log("initiate clear task sequence");
+//   }
+// };
 
-
-
+// document.getElementsByClassName("clear-all").addEventListener("click", clearAll);
 
 
 
