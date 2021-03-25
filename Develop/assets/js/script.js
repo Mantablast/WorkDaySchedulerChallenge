@@ -78,11 +78,11 @@ colorCoding();
 
 $( ".save-icon" ).click(function() {
   console.log("Save button clicked!");
-  var scheduleContent = $(this).parent().siblings().val()
+  var scheduleContent = $(this).parent().siblings("textarea").val()
   console.log('schedule content', scheduleContent)
 
-  scheduleContent = window.localStorage.setItem('text', JSON.stringify(scheduleContent));
-  var hourId = $(this).parent().siblings()
+  // scheduleContent = window.localStorage.setItem('text', JSON.stringify(scheduleContent));
+  var hourId = $(this).parent().parent().attr("id")
 
   console.log(hourId);
   scheduleContent = window.localStorage.setItem(`${hourId}`, JSON.stringify(scheduleContent));
