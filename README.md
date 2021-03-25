@@ -17,7 +17,7 @@ Made with ❤️ by Trilogy & Aimee Jesso
 
 
 ### ©️2021
-![Screenshot](./assets/images/workdayscreen.png)
+![Screenshot](./Develop/assets/images/workdayscreen.png)
 
 ###  Credit
 Help with object notation, object syntax
