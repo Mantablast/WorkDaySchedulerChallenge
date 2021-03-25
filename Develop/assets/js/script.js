@@ -29,25 +29,30 @@ $(".time-block").each(function () {
   loadTasks();
 };
 
-var loadTasks = function() {
-    var getSchedItems = JSON.parse(localStorage.getItem("scheduleContent"));
-    // if nothing in localStorage, create a new object to track all task status arrays
-    if (!getSchedItems) {
+//Reload tasks back into the time blocks
+//If I have time, this will be changed to a loop
+var loadTasks = function () {
+  console.log("We are Here");
+  $("#09 .text-box-insert").val(localStorage.getItem("09"));
+  console.log("09:00 content retrieved");
+  $("#10 .text-box-insert").val(localStorage.getItem("10"));
+  console.log("10:00 content retrieved");
+  $("#11 .text-box-insert").val(localStorage.getItem("11"));
+  console.log("11:00 content retrieved");
+  $("#12 .text-box-insert").val(localStorage.getItem("12"));
+  console.log("12:00 content retrieved");
+  $("#13 .text-box-insert").val(localStorage.getItem("13"));
+  console.log("1:00 content retrieved");
+  $("#14 .text-box-insert").val(localStorage.getItem("14"));
+  console.log("2:00 content retrieved");
+  $("#15 .text-box-insert").val(localStorage.getItem("15"));
+  console.log("3:00 content retrieved");
+  $("#16 .text-box-insert").val(localStorage.getItem("16"));
+  console.log("4:00 content retrieved");
+  $("#17 .text-box-insert").val(localStorage.getItem("17"));
+  console.log("5:00 content retrieved");
+};
 
-      scheduleItems = [{
-      hourId: [],
-      scheduleItems: []
-      }];
-    }
-      else {
-      $("#09 .text-box-insert").val(localStorage.getItem("09"));
-      console.log("09:00 content retrieved");
-      $("#10 .text-box-insert").val(localStorage.getItem("10"));
-      console.log("09:00 content retrieved");
-      $("#11 .text-box-insert").val(localStorage.getItem("11"));
-      console.log("09:00 content retrieved");
-   }
-  };
 
 //create a time interval setinterval() that will update content with current hour and trigger an hour tracking function
 setInterval(function() {
