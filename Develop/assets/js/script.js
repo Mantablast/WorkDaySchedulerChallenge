@@ -1,6 +1,5 @@
 
-// var formEl = document.querySelector("#task-form");
-// var scheduleItems = document.querySelector("#task-form");
+
 //Retreiving the current day of week and month 
 var todaysDate = moment().format('dddd, MMMM Do YYYY');
 $("#currentDay").html(todaysDate);
@@ -46,20 +45,20 @@ $(".time-block").each(function () {
 
 
 //a function to create tasks completely new or when loaded from the object arrays, also needs to set item to local storage
-$("#task-form").on("click", "p", function() {
-  var text = $(this)
-    .text()
-    .trim();
-    $(this).replaceWith(textInput);
-    textInput.trigger("focus");
-    // recreate p element
-var taskP = $("<p>")
-.addClass("m-1")
-.text(text);
+// $("#task-form").on("click", "p", function() {
+//   var text = $(this)
+//     .text()
+//     .trim();
+//     $(this).replaceWith(textInput);
+//     textInput.trigger("focus");
+//     // recreate p element
+// var taskP = $("<p>")
+// .addClass("m-1")
+// .text(text);
 
-// replace textarea with p element
-$(this).replaceWith(taskP);
-});
+// // replace textarea with p element
+// $(this).replaceWith(taskP);
+// });
 
 // }
 
@@ -78,12 +77,18 @@ colorCoding();
 
 
 $( ".save-icon" ).click(function() {
-    console.log("Save button clicked!");
-    var scheduleContent = $(this).siblings("text-box-insert").val();
-    scheduleContent = window.localStorage.setItem('user', JSON.stringify(scheduleContent));
+  console.log("Save button clicked!");
+  var scheduleContent = $(this).parent().siblings().val()
+  console.log('schedule content', scheduleContent)
+  scheduleContent = window.localStorage.setItem('text', JSON.stringify(scheduleContent));
+  var hourId = $(this).parent().siblings()
+  console.log(hourId);
+  scheduleContent = window.localStorage.setItem(`${hourId}`, JSON.stringify(scheduleContent));
 });
 
-
+// var scheduleContent = $(this).parent().siblings()[1].child()//this isnt working
+// var hourId = $(this).samethignbuttogettheid
+//  scheduleContent = window.localStorage.setItem(`${hourId`, JSON.stringify(scheduleContent));
 
 //not yet working
 // function clearAll() {
