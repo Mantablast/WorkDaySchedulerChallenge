@@ -70,5 +70,5 @@ $( ".save-icon" ).click(function() {
   var hourId = $(this).parent().parent().attr("id")
 
   console.log(hourId);
-  scheduleContent = window.localStorage.setItem(`${hourId}`, JSON(scheduleContent));
+  scheduleContent = window.localStorage.setItem(${hourId}, scheduleContent);
 })
