@@ -33,23 +33,23 @@ $(".time-block").each(function () {
 //If I have time, this will be changed to a loop
 var loadTasks = function () {
   console.log("We are Here");
-  $("#09 .text-box-insert").val.JSON.parse(localStorage.getItem("09"));
+  $("#09 .text-box-insert").val(localStorage.getItem("09"));
   console.log("09:00 content retrieved");
-  $("#10 .text-box-insert").val.JSON.parse(localStorage.getItem("10"));
+  $("#10 .text-box-insert").val(localStorage.getItem("10"));
   console.log("10:00 content retrieved");
-  $("#11 .text-box-insert").val.JSON.parse(localStorage.getItem("11"));
+  $("#11 .text-box-insert").val(localStorage.getItem("11"));
   console.log("11:00 content retrieved");
-  $("#12 .text-box-insert").val.JSON.parse(localStorage.getItem("12"));
+  $("#12 .text-box-insert").val(localStorage.getItem("12"));
   console.log("12:00 content retrieved");
-  $("#13 .text-box-insert").val.JSON.parse(localStorage.getItem("13"));
+  $("#13 .text-box-insert").val(localStorage.getItem("13"));
   console.log("1:00 content retrieved");
-  $("#14 .text-box-insert").val.JSON.parse(localStorage.getItem("14"));
+  $("#14 .text-box-insert").val(localStorage.getItem("14"));
   console.log("2:00 content retrieved");
-  $("#15 .text-box-insert").val.JSON.parse(localStorage.getItem("15"));
+  $("#15 .text-box-insert").val(localStorage.getItem("15"));
   console.log("3:00 content retrieved");
-  $("#16 .text-box-insert").val.JSON.parse(localStorage.getItem("16"));
+  $("#16 .text-box-insert").val(localStorage.getItem("16"));
   console.log("4:00 content retrieved");
-  $("#17 .text-box-insert").val.JSON.parse(localStorage.getItem("17"));
+  $("#17 .text-box-insert").val(localStorage.getItem("17"));
   console.log("5:00 content retrieved");
 };
 
@@ -70,5 +70,5 @@ $( ".save-icon" ).click(function() {
   var hourId = $(this).parent().parent().attr("id")
 
   console.log(hourId);
-  scheduleContent = window.localStorage.setItem(${hourId}, scheduleContent);
+  window.localStorage.setItem(`${hourId}`,scheduleContent);
 })
